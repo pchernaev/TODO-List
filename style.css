@@ -1,0 +1,154 @@
+body {
+  /* background-color: #ffe4c4; */
+  background-image: url("background.png");
+}
+
+nav {
+  min-height: 200px;
+  height: 70%;
+  max-height: auto;
+}
+
+nav {
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+ol {
+  margin: 0 auto;
+  display: table;
+}
+
+h1 {
+  text-align: center;
+  padding: 25px;
+  color: white;
+  font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+  text-rendering: geometricprecision;
+  font-weight: 800;
+}
+
+#buttons {
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+#div-header {
+  height: 18%;
+  width: 100%;
+  border-radius: 0px 0px 20px 20px;
+  background-color: #a0522d;
+}
+
+/* CSS */
+#delete {
+  background: #ff4742;
+  border: 1px solid #ff4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+#delete:hover,
+#delete:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #ff4742;
+}
+
+#delete:active {
+  opacity: 0.5;
+}
+
+#add {
+  background: #f4a460;
+  border: 1px solid #f4a460;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+#add:hover,
+#add:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #f4a460;
+}
+
+#add:active {
+  opacity: 0.5;
+}
+
+ol li {
+  font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+  font-size: 35px;
+  padding: 2px;
+}
+
+.del-btn {
+  font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 30px;
+  outline: 0;
+  margin-left: 15px;
+  color: grey;
+}
+
+.high {
+  color: #c41e3a;
+  font-weight: 800;
+}
+
+.mid {
+  color: #ff5733;
+  font-weight: 800;
+}
+
+.low {
+  color: #ffc300;
+  font-weight: 800;
+}
+
+#logo {
+  width: 130px;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
