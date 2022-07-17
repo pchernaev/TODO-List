@@ -1,5 +1,4 @@
 body {
-  /* background-color: #ffe4c4; */
   background-image: url("background.png");
 }
 
@@ -28,6 +27,7 @@ h1 {
   font-weight: 800;
 }
 
+
 #buttons {
   text-align: center;
   margin-bottom: 10px;
@@ -41,7 +41,7 @@ h1 {
   background-color: #a0522d;
 }
 
-/* CSS */
+
 #delete {
   background: #ff4742;
   border: 1px solid #ff4742;
@@ -118,6 +118,7 @@ ol li {
   font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
   font-size: 35px;
   padding: 2px;
+  display: inline;
 }
 
 .del-btn {
@@ -129,6 +130,7 @@ ol li {
   outline: 0;
   margin-left: 15px;
   color: grey;
+  display: inline;
 }
 
 .high {
@@ -151,4 +153,10 @@ ol li {
   position: fixed;
   right: 0;
   top: 0;
+}
+
+@media (max-width: 450px),(max-height: 700px) {
+  #logo{
+    display: none;
+  }
 }
