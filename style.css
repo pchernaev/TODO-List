@@ -13,7 +13,7 @@ nav {
   overflow-y: scroll;
 }
 
-ol {
+ul {
   margin: 0 auto;
   display: table;
 }
@@ -114,11 +114,17 @@ h1 {
   opacity: 0.5;
 }
 
-ol li {
+ul li {
+  display: inline;
+}
+
+ul li:before {
+  content: "- ";
+}
+li {
   font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
   font-size: 35px;
   padding: 2px;
-  display: inline;
 }
 
 .del-btn {

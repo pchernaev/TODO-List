@@ -56,16 +56,18 @@ function getNoteInfo(elements) {
 }
 
 function addNote(text, priorityVal) {
-  let element = document.createElement("li"),
+  let div = document.createElement("div"),
+    element = document.createElement("li"),
     delBtn = document.createElement("button"),
-    priority = priorityVal;
+    priority = priorityVal; 
+  div.appendChild(element);
+  div.appendChild(delBtn);
   element.classList.add(priority);
   delBtn.innerHTML = "X";
   delBtn.className = "del-btn";
 
   delBtn.addEventListener("click", () => {
-    element.remove();
-    delBtn.remove();
+    div.remove();
     let delBtns = document.querySelectorAll(".del-btn");
     delBtns.forEach((element) => {
       element.style.display = "none";
@@ -73,46 +75,49 @@ function addNote(text, priorityVal) {
     delBtnsActive = !delBtnsActive;
     let elements = Array.from(document.getElementsByTagName("li"));
     if (elements.length != 0) {
-      createCookie(getNoteInfo(elements), 2);
+      createCookie(getNoteInfo(elements), 365);
     } else {
       deleteCookie("notes");
     }
   });
-  element.setAttribute("draggable", "true");
+  div.setAttribute("draggable", "true");
 
   delBtn.style.display = "none";
   element.innerHTML = text;
-  element.append(delBtn);
-  list.appendChild(element);
+  list.appendChild(div);
 
-  element.addEventListener("dragstart", () => {
-    draggedElement = element;
+  div.addEventListener("dragstart", () => {
+    draggedElement = div;
   });
 
-  element.addEventListener("dragenter", function (e) {
+  div.addEventListener("dragenter", function (e) {
     e.preventDefault();
-    console.log("dragenter");
   });
 
-  element.addEventListener("dragover", function (e) {
+  div.addEventListener("dragover", function (e) {
     e.preventDefault();
-    console.log("dragover");
   });
 
-  element.addEventListener("drop", () => {
-    let classSwap = draggedElement.className;
-    draggedElement.className = element.className;
-    element.className = classSwap;
-
-    let swap = draggedElement.innerHTML;
-    draggedElement.innerHTML = element.innerHTML;
-    element.innerHTML = swap;
-    draggedElement = "";
+  div.addEventListener("drop", () => {
+    let draggedElLI = draggedElement.firstChild;
+    let draggedElBtn = draggedElement.lastChild;
+    let thisElLi = div.firstChild;
+    let thisElBtn = div.lastChild;
+    while (draggedElement.hasChildNodes()) {
+      draggedElement.removeChild(draggedElement.firstChild);
+    }
+    while (div.hasChildNodes()) {
+      div.removeChild(div.firstChild);
+    }
+    draggedElement.appendChild(thisElLi);
+    draggedElement.appendChild(draggedElBtn);
+    div.appendChild(draggedElLI);
+    div.appendChild(thisElBtn);
     let elements = Array.from(document.getElementsByTagName("li"));
-    createCookie(getNoteInfo(elements), 2);
+    createCookie(getNoteInfo(elements), 365);
   });
   let elements = Array.from(document.getElementsByTagName("li"));
-  createCookie(getNoteInfo(elements), 2);
+  createCookie(getNoteInfo(elements), 365);
 }
 
 let addButton = document.getElementById("add"),
